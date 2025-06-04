@@ -18,11 +18,11 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./nixos/configuration.nix
+          ./desktop/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.pete = ./home.nix;
+            home-manager.users.pete = ./desktop/home.nix;
             home-manager.backupFileExtension = "hmBackup";
           }
         ];
