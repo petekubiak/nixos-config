@@ -119,6 +119,7 @@
       exec-once = [
         "waybar"
         "dunst"
+        "nm-applet --indicator"
         "$terminal"
       ];
 
