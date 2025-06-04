@@ -132,20 +132,21 @@
 
   # Notification manager
   dunst
-
   # Required by dunst
   libnotify
-
   # App launcher
   rofi-wayland
-
+  # Network manager applet
   networkmanagerapplet
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.sauce-code-pro
-    nerd-fonts._0xproto
-  ];
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.sauce-code-pro
+      nerd-fonts._0xproto
+    ];
+    fontDir.enable = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
