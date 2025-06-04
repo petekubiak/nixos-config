@@ -23,6 +23,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.pete = ./home.nix;
+            home-manager.backupFileExtension = "hmBackup";
           }
         ];
       };

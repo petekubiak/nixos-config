@@ -104,12 +104,12 @@
   };
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "pete";
+  # services.displayManager.autoLogin.enable = true;
+  # services.displayManager.autoLogin.user = "pete";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
+  # systemd.services."getty@tty1".enable = false;
+  # systemd.services."autovt@tty1".enable = false;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -120,10 +120,25 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  vim 
   helix
   alacritty
   git
+
+  # Hyprland software
+  waybar
+  # If workspaces aren't being displayed in Hyprland properly, swap the above for this:
+  # (pkgs.waybar.overrideAttrs (oldAttrs: {
+  #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+  # }))
+
+  # Notification manager
+  dunst
+
+  # Required by dunst
+  libnotify
+
+  # App launcher
+  rofi-wayland
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -147,30 +162,7 @@
 
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-
-    # Allows X applications to work
-    xwayland.enable = true;
-    # NOTE: lag or FPS drops on stable NixOS may be due to a mesa verison mismatch. See here https://wiki.hyprland.org/Nix/Hyprland-on-NixOS/
-  };
-
-  environment.sessionVariables = {
-    # If cursor is invisible
-    # WLR_NO_HARDWARE_CURSORS = "1";
-
-    # Provides hints to electron apps like discord to use wayland
-    NIXOS_OZONE_WL = "1";
-  };
-
-  hardware = {
-    graphics.enable = true;
-    nvidia = {
-      open = true;
-      
-      # Most wayland compositors need this
-      modesetting.enable = true;
-    };
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   };
 
   # This value determines the NixOS release from which the default
