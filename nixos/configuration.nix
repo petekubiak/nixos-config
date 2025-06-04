@@ -49,9 +49,6 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  hardware.nvidia = {
-    open = true;
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -145,6 +142,34 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+
+    # Allows X applications to work
+    xwayland.enable = true;
+    # NOTE: lag or FPS drops on stable NixOS may be due to a mesa verison mismatch. See here https://wiki.hyprland.org/Nix/Hyprland-on-NixOS/
+  };
+
+  environment.sessionVariables = {
+    # If cursor is invisible
+    # WLR_NO_HARDWARE_CURSORS = "1";
+
+    # Provides hints to electron apps like discord to use wayland
+    NIXOS_OZONE_WL = "1";
+  };
+
+  hardware = {
+    graphics.enable = true;
+    nvidia = {
+      open = true;
+      
+      # Most wayland compositors need this
+      modesetting.enable = true;
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
