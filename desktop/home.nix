@@ -77,6 +77,7 @@
     ../modules/home/hyprland.nix
     ../modules/home/git.nix
     ../modules/home/alacritty.nix
+    ../modules/home/helix.nix
   ];
 
   # Let Home Manager install and manage itself.
