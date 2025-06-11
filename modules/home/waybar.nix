@@ -6,6 +6,8 @@
         layer = "top";
         position = "top";
         fixed-center = false;
+        margin-left = 10;
+        margin-right = 10;
         modules-left = [
           "hyprland/workspaces"
         ];
