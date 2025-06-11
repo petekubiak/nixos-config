@@ -142,7 +142,6 @@
 
   fonts = {
     packages = with pkgs; [
-      font-awesome
       nerd-fonts.sauce-code-pro
     ];
     fontDir.enable = true;

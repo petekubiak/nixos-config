@@ -19,14 +19,6 @@
   # environment.
   home.packages = with pkgs; [
     nerd-fonts.sauce-code-pro
-    font-awesome
-    fira-code
-    fira-code-symbols
-    liberation_ttf
-    mplus-outline-fonts.githubRelease
-    noto-fonts
-    noto-fonts-emoji
-    proggyfonts
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -44,11 +36,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
-  gtk = {
-    enable = true;
-    font.name = "Sauce Code Pro Nerd Font";
-  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
