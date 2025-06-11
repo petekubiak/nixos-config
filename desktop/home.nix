@@ -6,8 +6,6 @@
   home.username = "pete";
   home.homeDirectory = "/home/pete";
 
-  fonts.fontconfig.enable = true;
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -19,7 +17,16 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
+    nerd-fonts.sauce-code-pro
+    font-awesome
+    fira-code
+    fira-code-symbols
+    liberation_ttf
+    mplus-outline-fonts.githubRelease
+    noto-fonts
+    noto-fonts-emoji
+    proggyfonts
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -37,6 +44,11 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  gtk = {
+    enable = true;
+    font.name = "Sauce Code Pro Nerd Font";
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -78,6 +90,7 @@
     ../modules/home/git.nix
     ../modules/home/alacritty.nix
     ../modules/home/helix.nix
+    ../modules/home/waybar.nix
   ];
 
   # Let Home Manager install and manage itself.
