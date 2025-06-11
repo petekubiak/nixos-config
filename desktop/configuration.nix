@@ -140,13 +140,6 @@
   networkmanagerapplet
   ];
 
-  fonts = {
-    packages = with pkgs; [
-      nerd-fonts.sauce-code-pro
-    ];
-    fontDir.enable = true;
-  };
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
