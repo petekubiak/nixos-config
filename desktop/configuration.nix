@@ -126,10 +126,9 @@
   # Hyprland software
   waybar
   # If workspaces aren't being displayed in Hyprland properly, swap the above for this:
-  (pkgs.waybar.overrideAttrs (oldAttrs: {
-    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-  }))
-
+  # (pkgs.waybar.overrideAttrs (oldAttrs: {
+  #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+  # }))
   # Notification manager
   dunst
   # Required by dunst
