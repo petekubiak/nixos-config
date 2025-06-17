@@ -3,7 +3,7 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "autumn";
+      # theme = "autumn";
       editor = {
         auto-save = true;
         bufferline = "multiple";
