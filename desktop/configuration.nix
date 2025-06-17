@@ -176,12 +176,12 @@
   };
 
   stylix = {
-    enable = true; 
+    enable = true;
     image = pkgs.fetchurl {
       url = "https://cdn.esahubble.org/archives/images/wallpaper5/opo0328a.jpg";
       sha256 = "17n21cifyhmqr0jn25f7m5g69dhna419nbdh76d1bg83jymvjm1x";
     };
-    targets.gnome.enable = true;
+    polarity = "dark";
   };
 
   # This value determines the NixOS release from which the default
