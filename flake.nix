@@ -10,9 +10,14 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, stylix, ... }: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -25,6 +30,7 @@
             home-manager.users.pete = ./desktop/home.nix;
             home-manager.backupFileExtension = "hmBackup";
           }
+          stylix.nixosModules.stylix
         ];
       };
     };
