@@ -13,10 +13,7 @@
   config =
   let
     theme = "${pkgs.base16-schemes}/share/themes/${config.stylixOptions.scheme}.yaml";
-    wallpaper = pkgs.runCommand "image.png" { } ''
-      COLOR=$(${lib.getExe pkgs.yq} -r .palette.base00 ${theme})
-      ${lib.getExe pkgs.imagemagick} -size 2560x1440 xc:$COLOR $out
-    '';
+    wallpaper = config.lib.stylix.pixel "base00";
   in
   {
     stylix = {
