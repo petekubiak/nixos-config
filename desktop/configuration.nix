@@ -190,18 +190,21 @@
   };
 
   stylixOptions = {
+    image = pkgs.fetchurl {
     # Sombrero
-    # image = pkgs.fetchurl {
     #   url = "https://cdn.esahubble.org/archives/images/wallpaper5/opo0328a.jpg";
     #   sha256 = "17n21cifyhmqr0jn25f7m5g69dhna419nbdh76d1bg83jymvjm1x";
-    # };
-    scheme = "gruvbox-material-dark-hard";
 
     # Jungle tree
-    image = pkgs.fetchurl {
       url = "https://4kwallpapers.com/images/wallpapers/jungle-tree-dark-3840x2160-22695.jpg";
       sha256 = "1ys7zc9nrc28avknmzfflyj20nyiw8c92khg3cl9bmlyrbslsj35";
     };
+
+    scheme =
+      # "gruvbox-material-dark-hard"
+      "shadesmear-dark"
+    ;
+    
   };
 
   # This value determines the NixOS release from which the default
