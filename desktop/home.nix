@@ -78,6 +78,8 @@
     ../modules/home/alacritty.nix
     ../modules/home/helix.nix
     ../modules/home/waybar.nix
+    ../modules/home/starship.nix
+    ../modules/home/bash.nix
   ];
 
   # Let Home Manager install and manage itself.
