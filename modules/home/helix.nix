@@ -12,6 +12,8 @@
         line-number = "relative";
         preview-completion-insert = false;
         color-modes = true;
+        trim-trailing-whitespace = true;
+        trim-final-newlines = true;
 
         terminal = {
           command = "bash";
