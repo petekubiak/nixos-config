@@ -200,6 +200,8 @@
       sha256 = "1ys7zc9nrc28avknmzfflyj20nyiw8c92khg3cl9bmlyrbslsj35";
     };
 
+    generateTheme = false;
+
     scheme =
       # "gruvbox-material-dark-hard"
       "shadesmear-dark"

@@ -9,6 +9,7 @@
       type = lib.types.nullOr lib.types.path;
       default = null;
     };
+    stylixOptions.generateTheme = lib.mkEnableOption "";
   };
   config =
   let
@@ -19,7 +20,7 @@
     stylix = {
       image = if (config.stylixOptions.image != null) then config.stylixOptions.image else wallpaper;
       polarity = lib.mkIf(config.stylixOptions.image != null) "dark";
-      base16Scheme = lib.mkIf(config.stylixOptions.image == null) theme;
+      base16Scheme = lib.mkIf(!config.stylixOptions.generateTheme || config.stylixOptions.image == null) theme;
     };
   };
 }
