@@ -126,7 +126,7 @@
       }
 
       window#waybar {
-        background: transparent;
+        background: alpha(@base00, 0.5);
         color: @base04;
         border-radius: 7rem;
         border-width: 2px;
