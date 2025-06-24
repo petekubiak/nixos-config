@@ -209,7 +209,9 @@
 
     scheme =
       # "gruvbox-material-dark-hard"
-      "shadesmear-dark"
+      # "shadesmear-dark"
+      "apathy"
+      # "eighties"
     ;
     
   };
