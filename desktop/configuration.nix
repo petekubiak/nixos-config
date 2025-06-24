@@ -6,13 +6,14 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../modules/stylix.nix
     ];
 
   # Enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -63,9 +64,9 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  
+
   # Enable nVidia video drivers
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
@@ -108,7 +109,7 @@
     description = "Pete";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -129,34 +130,34 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  # Core utilities
-  helix
-  alacritty
-  git
+    # Core utilities
+    helix
+    alacritty
+    git
 
-  # Hyprland software
-  waybar
-  # If workspaces aren't being displayed in Hyprland properly, swap the above for this:
-  # (pkgs.waybar.overrideAttrs (oldAttrs: {
-  #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-  # }))
-  # Notification manager
-  dunst
-  # Required by dunst
-  libnotify
-  # App launcher
-  rofi-wayland
-  # Network manager applet
-  networkmanagerapplet
+    # Hyprland software
+    waybar
+    # If workspaces aren't being displayed in Hyprland properly, swap the above for this:
+    # (pkgs.waybar.overrideAttrs (oldAttrs: {
+    #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    # }))
+    # Notification manager
+    dunst
+    # Required by dunst
+    libnotify
+    # App launcher
+    rofi-wayland
+    # Network manager applet
+    networkmanagerapplet
 
-  # Nix helpers
-  nh
-  nix-output-monitor
-  nvd
+    # Nix helpers
+    nh
+    nix-output-monitor
+    nvd
 
-  # Helix languages
-  nil
-  nixpkgs-fmt
+    # Helix languages
+    nil
+    nixpkgs-fmt
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -196,11 +197,11 @@
 
   stylixOptions = {
     image = pkgs.fetchurl {
-    # Sombrero
-    #   url = "https://cdn.esahubble.org/archives/images/wallpaper5/opo0328a.jpg";
-    #   sha256 = "17n21cifyhmqr0jn25f7m5g69dhna419nbdh76d1bg83jymvjm1x";
+      # Sombrero
+      #   url = "https://cdn.esahubble.org/archives/images/wallpaper5/opo0328a.jpg";
+      #   sha256 = "17n21cifyhmqr0jn25f7m5g69dhna419nbdh76d1bg83jymvjm1x";
 
-    # Jungle tree
+      # Jungle tree
       url = "https://4kwallpapers.com/images/wallpapers/jungle-tree-dark-3840x2160-22695.jpg";
       sha256 = "1ys7zc9nrc28avknmzfflyj20nyiw8c92khg3cl9bmlyrbslsj35";
     };
@@ -213,7 +214,7 @@
       "apathy"
       # "eighties"
     ;
-    
+
   };
 
   # This value determines the NixOS release from which the default
