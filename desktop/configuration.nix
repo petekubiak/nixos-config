@@ -129,6 +129,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  # Core utilities
   helix
   alacritty
   git
@@ -152,6 +153,10 @@
   nh
   nix-output-monitor
   nvd
+
+  # Helix languages
+  nil
+  nixpkgs-fmt
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

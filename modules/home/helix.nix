@@ -44,5 +44,12 @@
         };
       };
     };
+
+    languages = {
+      language = [{
+        name = "nix";
+        formatter.command = "nixpkgs-fmt";
+      }];
+    };
   };
 }
