@@ -28,6 +28,12 @@
     open = true;
   };
 
+  hardware.graphics =
+    {
+      enable = true;
+      enable32Bit = true;
+    };
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -158,6 +164,10 @@
     # Helix languages
     nil
     nixpkgs-fmt
+
+    # Gaming
+    mangohud
+    protonup
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -215,6 +225,17 @@
       # "eighties"
     ;
 
+  };
+
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+
+  programs.gamemode.enable = true;
+
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/pete/.steam/root/compatibilitytools.d";
   };
 
   # This value determines the NixOS release from which the default
