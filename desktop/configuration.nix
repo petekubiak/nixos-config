@@ -172,6 +172,13 @@
     # Gaming
     mangohud
     protonup
+
+    # Phone file transfer
+    # mtp-tools
+    jmtpfs
+
+    # Image editing
+    gimp
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
