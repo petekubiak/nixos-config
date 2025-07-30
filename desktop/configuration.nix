@@ -172,6 +172,7 @@
     # Gaming
     mangohud
     protonup
+    discord
 
     # Phone file transfer
     # mtp-tools
