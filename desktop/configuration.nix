@@ -173,6 +173,7 @@
     mangohud
     protonup
     discord
+    beyond-all-reason
 
     # Phone file transfer
     # mtp-tools
