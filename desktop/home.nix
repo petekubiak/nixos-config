@@ -35,7 +35,20 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # Add FreeCAD with environment variable to fix graphical issue
+    (writeShellScriptBin "freecad" ''
+      QT_QPA_PLATFORM=xcb ${pkgs.freecad}/bin/freecad "$@"
+    '')
   ];
+
+  xdg.desktopEntries.freecad = {
+    name = "FreeCAD";
+    exec = "freecad %F";
+    icon = "FreeCAD";
+    categories = [ "Graphics" "Engineering" ];
+  };
+
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
