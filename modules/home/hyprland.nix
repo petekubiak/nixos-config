@@ -28,7 +28,7 @@
         # "col.inactive_border" = "rgba(595959aa)";
 
         resize_on_border = "false";
-        
+
         # May want this in future for games
         # allow_tearing = "true";
 
@@ -103,7 +103,7 @@
 
       input = {
         kb_layout = "gb";
-        
+
         follow_mouse = "1";
 
         sensitivity = "0";
@@ -127,7 +127,7 @@
         "$mod, l, movefocus, r"
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"
-        
+
         # Switch workspaces
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -153,5 +153,24 @@
         "$mod SHIFT, 0, movetoworkspace, 10"
       ];
     };
-  };  
+  };
+
+  services.hypridle = {
+    enable = true;
+    settings = {
+      # general = { };
+      listener = [
+        {
+          timeout = 150;
+          on-timeout = "brightnessctl -s set 10";
+          on-resume = "brightnessctl -r";
+        }
+        {
+          timeout = 300;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
+        }
+      ];
+    };
+  };
 }
