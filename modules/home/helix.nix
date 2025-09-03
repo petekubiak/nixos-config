@@ -15,9 +15,9 @@
 
         terminal = {
           command = "bash";
-          args = ["-c"];
+          args = [ "-c" ];
         };
-        
+
         file-picker.hidden = false;
 
         lsp = {
@@ -34,9 +34,9 @@
 
       keys = {
         normal = {
-          C-g = ["search_selection" "global_search"];
-          C-l = ["kill_to_line_end" "insert_mode"];
-          C-h = ["kill_to_line_start" "insert_mode"];
+          C-g = [ "search_selection" "global_search" ];
+          C-l = [ "kill_to_line_end" "insert_mode" ];
+          C-h = [ "kill_to_line_start" "insert_mode" ];
         };
 
         insert = {
@@ -46,11 +46,22 @@
     };
 
     languages = {
-      language = [{
-        name = "nix";
-        formatter.command = "nixpkgs-fmt";
-        auto-format = true;
-      }];
+      language-server.rust-analyzer = {
+        command = "nix";
+        args = [ "develop" "--command" "rust-analyzer" ];
+      };
+
+      language = [
+        {
+          name = "nix";
+          formatter.command = "nixpkgs-fmt";
+          auto-format = true;
+        }
+        {
+          name = "rust";
+          auto-format = true;
+        }
+      ];
     };
   };
 }
