@@ -49,6 +49,18 @@
       language-server.rust-analyzer = {
         command = "nix";
         args = [ "develop" "--command" "rust-analyzer" ];
+        config = {
+          check.command = "clippy";
+          completion.callable.snippets = "add_parentheses";
+          inlayHints = {
+            bindingModeHints.enable = true;
+            discriminantHints.enable = true;
+            genericParameterHints = {
+              const.enable = true;
+              type.enable = true;
+            };
+          };
+        };
       };
 
       language = [
