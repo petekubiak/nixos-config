@@ -156,7 +156,7 @@
     # Required by dunst
     libnotify
     # App launcher
-    rofi-wayland
+    rofi
     # Network manager applet
     networkmanagerapplet
 
