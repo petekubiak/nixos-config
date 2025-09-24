@@ -121,6 +121,7 @@
         "$mod, m, exit"
         "$mod, p, pseudo"
         "$mod, s, togglesplit"
+        "$mod, f, togglefloating"
 
         # Move focus
         "$mod, h, movefocus, l"
@@ -151,6 +152,11 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
+      ];
+
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
       ];
     };
   };
