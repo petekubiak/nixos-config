@@ -149,6 +149,7 @@
     helix
     alacritty
     git
+    jujutsu
 
     # Hyprland software
     waybar
