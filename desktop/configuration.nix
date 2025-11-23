@@ -177,7 +177,7 @@
 
     # Gaming
     mangohud
-    protonup
+    protonup-ng
     discord
     beyond-all-reason
 
@@ -190,7 +190,7 @@
 
     obsidian
 
-    ghidra
+    unzip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
