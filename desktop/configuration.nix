@@ -10,6 +10,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../modules/stylix.nix
+      ../modules/udev.nix
     ];
 
   # Enable flakes
@@ -122,7 +123,7 @@
   users.users.pete = {
     isNormalUser = true;
     description = "Pete";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
     packages = with pkgs; [
       #  thunderbird
     ];
@@ -188,9 +189,12 @@
     # Image editing
     gimp
 
+    # Markdown note taking
     obsidian
 
+    # Misc utilities
     unzip
+    p7zip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
