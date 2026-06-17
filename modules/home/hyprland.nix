@@ -1,6 +1,7 @@
 { config, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
+    # configType = "hyprlang";
     settings = {
 
       monitor = ",preferred,auto,auto";
@@ -88,7 +89,6 @@
       };
 
       dwindle = {
-        pseudotile = "true";
         preserve_split = "true";
       };
 
@@ -120,7 +120,7 @@
         # Hyprland binds
         "$mod, m, exit"
         "$mod, p, pseudo"
-        "$mod, s, togglesplit"
+        "$mod, s, layoutmsg, togglesplit"
         "$mod, f, togglefloating"
 
         # Move focus
