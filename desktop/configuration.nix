@@ -180,17 +180,19 @@
     mangohud
     protonup-ng
     discord
-    beyond-all-reason
+    # beyond-all-reason
 
     # Phone file transfer
     # mtp-tools
-    jmtpfs
 
     # Image editing
     gimp
 
     # Markdown note taking
     obsidian
+
+    # Reverse engineering
+    ghidra
 
     # Misc utilities
     unzip
