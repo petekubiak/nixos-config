@@ -8,6 +8,7 @@
     ./modules/home/git.nix
     ./modules/home/helix.nix
     ./modules/home/jj.nix
+    ./modules/home/firefox.nix
   ];
 
   xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
