@@ -72,18 +72,46 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    vim
-    helix
-    git
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      vim
+      helix
+      git
+    ];
 
+    # Make Electron apps use Wayland
+    sessionVariables.NIXOS_OZONE_WL = "1";
+  };
+
+  # Program configurations
   programs.nh = {
     enable = true;
     flake = "/etc/nixos";
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
   };
+
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
+
+  # Audio, Bluetooth and Framework-friendly power management
+  security.rtkit.enable = true;
+  hardware.bluetooth.enable = true;
+  services = {
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+    };
+
+    power-profiles-daemon.enable = true;
+    fwupd.enable = true;
+  };
+
+  fonts.packages = [
+    pkgs.nerd-fonts.sauce-code-pro
+  ];
 
   # List services that you want to enable:
 
