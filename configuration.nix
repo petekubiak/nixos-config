@@ -84,16 +84,20 @@
   };
 
   # Program configurations
-  programs.nh = {
-    enable = true;
-    flake = "/etc/nixos";
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-  };
+  programs = {
+    nh = {
+      enable = true;
+      flake = "/etc/nixos";
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
+    };
 
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
+
+    dconf.enable = true;
   };
 
   # Audio, Bluetooth and Framework-friendly power management
@@ -112,6 +116,8 @@
   fonts.packages = [
     pkgs.nerd-fonts.sauce-code-pro
   ];
+
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # List services that you want to enable:
 
