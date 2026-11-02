@@ -24,7 +24,7 @@
       rerere.enabled = true;
       core.editor = "hx";
     };
-    signing.key = "/home/pete/.ssh/id_ed22519.pub";
+    signing.key = "/home/pete/.ssh/id_ed25519.pub";
   };
   programs.delta = {
     enable = true;
