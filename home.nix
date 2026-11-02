@@ -6,5 +6,6 @@
 
   imports = [
     ./modules/home/git.nix
+    ./modules/home/helix.nix
   ];
 }
