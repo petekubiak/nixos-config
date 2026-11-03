@@ -20,6 +20,7 @@
 
   home.packages = [
     pkgs.kitty
+    pkgs.hyprlauncher
   ];
 
   dconf.settings."org/gnome/desktop/interface" = {
