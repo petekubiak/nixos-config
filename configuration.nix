@@ -98,6 +98,12 @@
     };
 
     dconf.enable = true;
+
+    _1password.enable = true;
+    _1password-gui = {
+      enable = true;
+      polkitPolicyOwners = [ "pete" ];
+    };
   };
 
   # Audio, Bluetooth and Framework-friendly power management
