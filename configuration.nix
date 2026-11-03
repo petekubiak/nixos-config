@@ -119,6 +119,14 @@
 
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
+  # Login service provided by tuigreet
+  services.greetd = {
+    enable = true;
+    settings.default_session = {
+      command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --background matrix --cmd 'uwsm start hyprland-uwsm.desktop'";
+    };
+  };
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
