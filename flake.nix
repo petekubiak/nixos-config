@@ -14,7 +14,7 @@
     inputs@{ nixpkgs, home-manager, ... }:
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        framework = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
           modules = [
