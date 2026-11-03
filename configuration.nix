@@ -133,7 +133,8 @@
     };
   };
 
-  # List services that you want to enable:
+  services.fprintd.enable = true;
+  security.pam.services.greetd.fprintAuth = false;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
