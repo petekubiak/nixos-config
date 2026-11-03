@@ -10,13 +10,25 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    wallpaper = {
+      url = "file+https://unsplash.com/photos/acGzfQW2e7Q/download";
+      flake = false;
+    };
   };
 
   outputs =
-    inputs@{
+    {
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      stylix,
+      wallpaper,
       ...
     }:
     let
@@ -27,9 +39,11 @@
       nixosConfigurations = {
         framework = nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit wallpaper; };
 
           modules = [
             ./configuration.nix
+            stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

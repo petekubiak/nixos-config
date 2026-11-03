@@ -36,4 +36,6 @@
   };
 
   services.hyprpolkitagent.enable = true;
+
+  services.hyprpaper.enable = true;
 }

@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ pkgs, ... }:
+{ pkgs, wallpaper, ... }:
 
 {
   imports = [
@@ -136,8 +136,15 @@
     };
   };
 
+  # Fingerprint scanner
   services.fprintd.enable = true;
   security.pam.services.greetd.fprintAuth = false;
+
+  stylix = {
+    enable = true;
+    image = wallpaper;
+    polarity = "dark";
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
