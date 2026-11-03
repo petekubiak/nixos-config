@@ -10,6 +10,8 @@
     ./modules/home/jj.nix
     ./modules/home/firefox.nix
     ./modules/home/alacritty.nix
+    ./modules/home/starship.nix
+    ./modules/home/zsh.nix
   ];
 
   xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;

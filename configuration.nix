@@ -64,6 +64,7 @@
       "networkmanager"
       "wheel"
     ];
+    shell = pkgs.zsh;
     packages = [ ];
   };
 
@@ -104,6 +105,8 @@
       enable = true;
       polkitPolicyOwners = [ "pete" ];
     };
+
+    zsh.enable = true;
   };
 
   # Audio, Bluetooth and Framework-friendly power management
