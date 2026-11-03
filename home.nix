@@ -12,9 +12,8 @@
     ./modules/home/alacritty.nix
     ./modules/home/starship.nix
     ./modules/home/zsh.nix
+    ./modules/home/hyprland.nix
   ];
-
-  xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
 
   programs.waybar = {
     enable = true;
