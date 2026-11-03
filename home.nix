@@ -9,6 +9,7 @@
     ./modules/home/helix.nix
     ./modules/home/jj.nix
     ./modules/home/firefox.nix
+    ./modules/home/alacritty.nix
   ];
 
   xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
@@ -19,7 +20,6 @@
   };
 
   home.packages = [
-    pkgs.kitty
     pkgs.hyprlauncher
   ];
 
