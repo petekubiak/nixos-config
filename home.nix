@@ -4,19 +4,7 @@
   home.homeDirectory = "/home/pete";
   home.stateVersion = "26.05";
 
-  imports = [
-    ./modules/home/git.nix
-    ./modules/home/helix.nix
-    ./modules/home/jj.nix
-    ./modules/home/firefox.nix
-    ./modules/home/alacritty.nix
-    ./modules/home/starship.nix
-    ./modules/home/zsh.nix
-    ./modules/home/hyprland.nix
-    ./modules/home/waybar.nix
-    ./modules/home/hyprlock.nix
-    ./modules/home/yazi.nix
-  ];
+  imports = [ ./modules/home ];
 
   home.packages = [
     pkgs.hyprlauncher

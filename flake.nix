@@ -30,29 +30,34 @@
       stylix,
       wallpaper,
       ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
-    in
-    {
-      nixosConfigurations = {
-        framework = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit wallpaper; };
-
+      mkHost =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
           modules = [
-            ./configuration.nix
+            ./hosts/${hostname}
+            ./modules/nixos
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
-              home-manager.users.pete = ./home.nix;
+              networking.hostName = hostname;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit pkgs-unstable; };
+                users.pete = ./home.nix;
+              };
             }
           ];
         };
+    in
+    {
+      nixosConfigurations = {
+        framework = mkHost "framework";
       };
     };
 }
