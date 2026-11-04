@@ -15,6 +15,7 @@
     ./modules/home/hyprland.nix
     ./modules/home/waybar.nix
     ./modules/home/hyprlock.nix
+    ./modules/home/yazi.nix
   ];
 
   home.packages = [

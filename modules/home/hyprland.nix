@@ -51,7 +51,7 @@ in
 
       -- Set programs that you use
       local terminal    = "alacritty"
-      local fileManager = "dolphin"
+      local fileManager = "alacritty --class yazi -e yazi"
       local menu        = "hyprlauncher"
 
 
