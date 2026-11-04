@@ -16,6 +16,7 @@
         margin-right = 2;
         margin-bottom = 1;
         spacing = 4;
+        height = 32;
 
         modules-left = [
           "hyprland/workspaces"
@@ -28,7 +29,6 @@
         modules-right = [
           "idle_inhibitor"
           "pulseaudio"
-          "power-profiles-daemon"
           "cpu"
           "memory"
           "temperature"
@@ -152,7 +152,7 @@
     style = lib.mkAfter /* css */ ''
       * {
         font-family: "SauceCodePro Nerd Font Propo";
-        font-size: 14px;
+        font-size: 15px;
       }
 
       window#waybar {
@@ -161,7 +161,7 @@
       }
 
       window#waybar > box {
-        background-color: @base00;
+        background-color: alpha(@base00, 0.9);
         color: @base04;
         border-radius: 7rem;
         border: 2px solid @base04;
@@ -176,6 +176,8 @@
       #workspaces button {
         color: @base04;
         border-radius: 7rem;
+        min-height: 0;
+        padding: 0 6px;
       }
 
       #workspaces button.active {
@@ -183,6 +185,42 @@
         border: none;
       }
 
+      #workspaces button:hover {
+        background: alpha(@base02, 0.2);
+      }
+
+      #idle_inhibitor,
+      #pulseaudio,
+      #cpu,
+      #memory,
+      #temperature,
+      #backlight,
+      #battery,
+      #network,
+      #bluetooth,
+      #tray,
+      #clock {
+        border-radius: 6px;
+        transition: box-shadow 150ms ease;
+      }
+
+      #clock {
+        border-radius: 6px 7rem 7rem 6px;
+      }
+
+      #idle_inhibitor:hover,
+      #pulseaudio:hover,
+      #cpu:hover,
+      #memory:hover,
+      #temperature:hover,
+      #backlight:hover,
+      #battery:hover,
+      #network:hover,
+      #bluetooth:hover,
+      #tray:hover,
+      #clock:hover {
+        box-shadow: inset 0 -3px @base07;
+      }
     '';
   };
 }
