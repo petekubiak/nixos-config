@@ -114,7 +114,7 @@ in
 
               col = {
                   active_border   = { colors = {"rgb(${theme.base0C})", "rgb(${theme.base0B})"}, angle = 45 },
-                  inactive_border = "rgba(${theme.base03}ee)",
+                  inactive_border = "rgba(${theme.base08}ee)",
               },
 
               -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -131,7 +131,7 @@ in
               rounding_power = 2,
 
               -- Change transparency of focused and unfocused windows
-              active_opacity   = 1.0,
+              active_opacity   = 0.98,
               inactive_opacity = 0.9,
 
               shadow = {

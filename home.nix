@@ -17,11 +17,6 @@
     ./modules/home/hyprlock.nix
   ];
 
-  # programs.waybar = {
-  #   enable = true;
-  #   systemd.enable = true;
-  # };
-
   home.packages = [
     pkgs.hyprlauncher
   ];
@@ -67,4 +62,5 @@
     };
   };
 
+  stylix.targets.firefox.profileNames = [ "default" ];
 }
