@@ -13,12 +13,13 @@
     ./modules/home/starship.nix
     ./modules/home/zsh.nix
     ./modules/home/hyprland.nix
+    ./modules/home/waybar.nix
   ];
 
-  programs.waybar = {
-    enable = true;
-    systemd.enable = true;
-  };
+  # programs.waybar = {
+  #   enable = true;
+  #   systemd.enable = true;
+  # };
 
   home.packages = [
     pkgs.hyprlauncher
