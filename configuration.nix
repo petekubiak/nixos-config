@@ -138,7 +138,10 @@
 
   # Fingerprint scanner
   services.fprintd.enable = true;
-  security.pam.services.greetd.fprintAuth = false;
+  security.pam.services = {
+    greetd.fprintAuth = false;
+    hyprlock.fprintAuth = false;
+  };
 
   stylix = {
     enable = true;
