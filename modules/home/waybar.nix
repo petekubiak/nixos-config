@@ -1,4 +1,8 @@
-{ lib, ... }: {
+{ lib, pkgs, ... }: {
+  home.packages = [
+    pkgs.bluetui
+  ];
+
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -126,6 +130,7 @@
           "format-linked" = "{ifname} (No IP)";
           "format-disconnected" = "Disconnected 󰖪";
           "format-alt" = "{ifname}: {ipaddr}/{cidr}";
+          "on-click" = "alacritty --class nmtui-connect -e nmtui-connect";
         };
 
         "bluetooth" = {
@@ -134,6 +139,7 @@
           "tooltip-format-connected" = "{device_enumerate}";
           "tooltip-format-enumerate-connected" = "{device_alias}";
           "tooltip-format-enumerate-connected-battery" = "{device_alias} {device_battery_percentage}% 󰁹";
+          "on-click" = "alacritty --class bluetui -e bluetui";
         };
 
         "clock" = {
