@@ -16,6 +16,10 @@
         truncation_length = 32;
       };
 
+      sudo = {
+        symbol = "";
+      };
+
       format = lib.concatStrings [
         "($nix_shell$container$fill$jj_metrics\n)"
         "$cmd_duration"
@@ -24,8 +28,8 @@
         "$shlvl"
         "$shell"
         "$env_var"
-        "$jobs"
         "$sudo"
+        "$jobs"
         "$username"
         "$character"
       ];
