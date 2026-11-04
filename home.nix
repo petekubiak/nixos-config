@@ -19,6 +19,8 @@
 
   home.packages = [
     pkgs.hyprlauncher
+    pkgs.brightnessctl
+    pkgs.playerctl
   ];
 
   dconf.settings."org/gnome/desktop/interface" = {
@@ -61,6 +63,8 @@
       ];
     };
   };
+
+  services.playerctld.enable = true;
 
   stylix.targets.firefox.profileNames = [ "default" ];
 }
