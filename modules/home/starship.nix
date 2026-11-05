@@ -20,6 +20,40 @@
         symbol = "";
       };
 
+      battery = {
+        full_symbol = "󰁹";
+        charging_symbol = "󰁾[↑](italic bold green)";
+        discharging_symbol = "󰁾↓";
+        unknown_symbol = "󰚥";
+        empty_symbol = "󰁺";
+      };
+
+      python = {
+        format = "$symbol[$version](italic dimmed yellow)";
+        symbol = " [󰌠](#306998)";
+        version_format = "v$raw";
+      };
+
+      cmake = {
+        format = "$symbol[$version](italic dimmed yellow)";
+        symbol = "[via](italic) [](#064F8C)";
+      };
+
+      c = {
+        format = "[$symbol](#B0C4DE)[$version-$name](italic dimmed yellow)";
+        symbol = "";
+      };
+
+      directory = {
+        home_symbol = "";
+        truncation_length = 3;
+        truncation_symbol = "/";
+      };
+
+      nix_shell = {
+        symbol = "";
+      };
+
       format = lib.concatStrings [
         "($nix_shell$container$fill$jj_metrics\n)"
         "$cmd_duration"
@@ -41,7 +75,7 @@
         "$vcsh"
         "$fossil_branch"
         "$jj_bookmark"
-        "$jj_status"
+        "$jj_status "
         "$hg_branch"
         "$pijul_channel"
         "$docker_context"
