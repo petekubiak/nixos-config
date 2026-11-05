@@ -10,6 +10,8 @@
     pkgs.hyprlauncher
     pkgs.brightnessctl
     pkgs.playerctl
+
+    pkgs.ghidra
   ];
 
   # Reactivation of hyprlauncher on rebuild

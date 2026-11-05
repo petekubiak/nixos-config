@@ -59,6 +59,7 @@
     {
       nixosConfigurations = {
         framework = mkHost "framework";
+        colossus = mkHost "colossus";
       };
     };
 }

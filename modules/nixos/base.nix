@@ -50,4 +50,9 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="1366", MODE="0666"
   '';
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
 }
