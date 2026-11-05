@@ -80,12 +80,17 @@
         };
 
         "temperature" = {
+          "warning-threshold" = 70;
           "critical-threshold" = 80;
           "format" = "{temperatureC}°C {icon}";
+          "format-warning" = "{temperatureC}°C !";
+          "format-critical" = "{temperatureC}°C ";
           "format-icons" = [
-            ""
+            ""
+            ""
             ""
-            "󰸁"
+            ""
+            ""
           ];
         };
 
@@ -220,6 +225,22 @@
       #tray:hover,
       #clock:hover {
         box-shadow: inset 0 -3px @base07;
+      }
+
+      #temperature.warning {
+        color: @base0A
+      }
+
+      #temperature.critical {
+        color: @base09
+      }
+
+      #battery.warning {
+        color: @base0A
+      }
+
+      #battery.critical {
+        color: @base09
       }
     '';
   };
