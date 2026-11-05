@@ -4,6 +4,8 @@
     ./hardware-configuration.nix
   ];
 
+  home-manager.users.pete.imports = [ ../../modules/home/claude.nix ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 

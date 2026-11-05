@@ -25,15 +25,16 @@
   outputs =
     {
       nixpkgs,
-      nixpkgs-unstable,
       home-manager,
       stylix,
-      wallpaper,
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      pkgs-unstable = import inputs.nixpkgs-unstable {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+
       mkHost =
         hostname:
         nixpkgs.lib.nixosSystem {
