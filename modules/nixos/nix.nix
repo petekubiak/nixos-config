@@ -9,7 +9,7 @@
 
   programs.nh = {
     enable = true;
-    flake = "/etc/nixos";
+    flake = "/home/pete/nixos-config";
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
   };
