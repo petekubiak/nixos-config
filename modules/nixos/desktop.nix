@@ -12,10 +12,6 @@
 
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  fonts.packages = [
-    pkgs.nerd-fonts.sauce-code-pro
-  ];
-
   security.rtkit.enable = true;
   hardware.bluetooth.enable = true;
   services.pipewire = {

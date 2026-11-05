@@ -156,7 +156,7 @@
 
     style = lib.mkAfter /* css */ ''
       * {
-        font-family: "SauceCodePro Nerd Font Propo";
+        font-family: "Hack Nerd Font Propo";
         font-size: 15px;
       }
 

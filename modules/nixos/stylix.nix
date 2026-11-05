@@ -4,8 +4,8 @@
     image = inputs.wallpaper;
     polarity = "dark";
     fonts.monospace = {
-      package = pkgs.nerd-fonts.sauce-code-pro;
-      name = "SauceCodePro Nerd Font Mono";
+      package = pkgs.nerd-fonts.hack;
+      name = "Hack Nerd Font Mono";
     };
   };
 
