@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -13,7 +13,6 @@
       enable = true;
       polkitPolicyOwners = [ "pete" ];
     };
-
   };
 
   # Laptop power management and firmware updates
@@ -34,6 +33,9 @@
     -- Home setup
     hl.monitor({ output = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. AORUS AD27QD 19270B000840", mode = "preferred", position = "auto-left", scale = 1})
   '';
+
+  # Applications
+  home-manager.users.pete.home.packages = [ pkgs.zoom-us ];
 
   system.stateVersion = "26.05";
 }
