@@ -36,6 +36,19 @@
           other-lines = "error";
         };
       };
+
+      keys = {
+        normal = {
+          C-l = [
+            "kill_to_line_end"
+            "insert_mode"
+          ];
+          C-h = [
+            "kill_to_line_start"
+            "insert_mode"
+          ];
+        };
+      };
     };
 
     languages = {
