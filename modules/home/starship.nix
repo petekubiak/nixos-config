@@ -12,8 +12,9 @@
 
     settings = {
       jj_bookmark = {
-        symbol = "";
+        symbol = "";
         truncation_length = 32;
+        style = "italic purple";
       };
 
       sudo = {
@@ -48,6 +49,7 @@
         home_symbol = "";
         truncation_length = 3;
         truncation_symbol = "/";
+        repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)";
       };
 
       nix_shell = {
@@ -72,10 +74,13 @@
         "$singularity"
         "$kubernetes"
         "$directory"
+        " "
         "$vcsh"
         "$fossil_branch"
         "$jj_bookmark"
-        "$jj_status "
+        " "
+        "$jj_status"
+        " "
         "$hg_branch"
         "$pijul_channel"
         "$docker_context"
