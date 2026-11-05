@@ -1,5 +1,6 @@
 {
   imports = [
+    ./atuin.nix
     ./git.nix
     ./helix.nix
     ./jj.nix
