@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home.username = "pete";
   home.homeDirectory = "/home/pete";
@@ -11,6 +11,11 @@
     pkgs.brightnessctl
     pkgs.playerctl
   ];
+
+  # Reactivation of hyprlauncher on rebuild
+  home.activation.restartHyprlauncher = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    run ${pkgs.procps}/bin/pkill -x hyprlauncher || true
+  '';
 
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";
