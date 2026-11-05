@@ -284,11 +284,17 @@ in
       hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
       hl.bind(mainMod .. " + t", hl.dsp.layout("togglesplit"))    -- dwindle only
 
-      -- Move focus with mainMod + arrow keys
+      -- Move focus with mainMod + hjkl
       hl.bind(mainMod .. " + h",  hl.dsp.focus({ direction = "left" }))
       hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
       hl.bind(mainMod .. " + k",    hl.dsp.focus({ direction = "up" }))
       hl.bind(mainMod .. " + j",  hl.dsp.focus({ direction = "down" }))
+
+      -- Move windows with mainMod + Shift + hjkl
+      hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
+      hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
+      hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
+      hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
 
       -- Switch workspaces with mainMod + [0-9]
       -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -297,6 +303,10 @@ in
           hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
           hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
       end
+
+      -- Move workspaces between monitors
+      hl.bind(mainMod .. " + CTRL + SHIFT + h", hl.dsp.workspace.move({ monitor = "l" }))
+      hl.bind(mainMod .. " + CTRL + SHIFT + l", hl.dsp.workspace.move({ monitor = "r" }))
 
       -- Example special workspace (scratchpad)
       hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))

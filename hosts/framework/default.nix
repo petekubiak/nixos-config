@@ -29,6 +29,11 @@
     hyprlock.fprintAuth = false;
   };
 
-  system.stateVersion = "26.05"; # Did you read the comment?
+  # Monitor positioning
+  home-manager.users.pete.wayland.windowManager.hyprland.extraConfig = /* lua */ ''
+    -- Home setup
+    hl.monitor({ output = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. AORUS AD27QD 19270B000840", mode = "preferred", position = "auto-left", scale = 1})
+  '';
 
+  system.stateVersion = "26.05";
 }
