@@ -19,13 +19,18 @@
     pulse.enable = true;
   };
 
-  # Login service provided by tuigreet
-  services.greetd = {
-    enable = true;
-    settings.default_session = {
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --background matrix --cmd 'uwsm start hyprland-uwsm.desktop'";
+  services = {
+    # Login service provided by tuigreet
+    greetd = {
+      enable = true;
+      settings.default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --background matrix --cmd 'uwsm start hyprland-uwsm.desktop'";
+      };
     };
+
+    udisks2.enable = true;
   };
 
   security.pam.services.hyprlock = { };
+
 }

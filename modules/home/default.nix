@@ -12,5 +12,6 @@
     ./waybar.nix
     ./hyprlock.nix
     ./yazi.nix
+    ./udiskie.nix
   ];
 }
