@@ -33,6 +33,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "dialout"
     ];
     shell = pkgs.zsh;
     packages = [ ];
@@ -45,4 +46,8 @@
     helix
     git
   ];
+
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="1366", MODE="0666"
+  '';
 }
