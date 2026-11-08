@@ -73,6 +73,7 @@
 
         "cpu" = {
           "format" = "{usage}% ";
+          "interval" = 1;
         };
 
         "memory" = {
@@ -80,6 +81,7 @@
         };
 
         "temperature" = {
+          "interval" = 5;
           "warning-threshold" = 70;
           "critical-threshold" = 80;
           "format" = "{temperatureC}°C {icon}";
@@ -117,6 +119,7 @@
           "format" = "{capacity}% {icon}";
           "format-full" = "{capacity}% {icon}";
           "format-charging" = "{capacity}% {icon}󱐋";
+          "format-discharging" = "{time} {icon}";
           "format-plugged" = "{capacity}% ";
           "format-alt" = "{time} {icon}";
           "format-icons" = [
@@ -129,7 +132,8 @@
         };
 
         "network" = {
-          "format-wifi" = "{essid} ({signalStrength}%) ";
+          "interval" = 1;
+          "format-wifi" = "{essid} {bandwidthTotalBytes:>3} ({signalStrength}%) ";
           "format-ethernet" = "{ipaddr}/{cidr} 󰈁";
           "tooltip-format" = "{ifname} via {gwaddr}";
           "format-linked" = "{ifname} (No IP)";
