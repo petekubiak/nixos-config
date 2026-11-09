@@ -31,6 +31,7 @@
           "pulseaudio"
           "cpu"
           "memory"
+          "disk"
           "temperature"
           "backlight"
           "battery"
@@ -78,6 +79,10 @@
 
         "memory" = {
           "format" = "{}% ";
+        };
+
+        "disk" = {
+          "format" = "{percentage_used}% ";
         };
 
         "temperature" = {
