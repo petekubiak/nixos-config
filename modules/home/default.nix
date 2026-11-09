@@ -9,6 +9,7 @@
     ./hyprland.nix
     ./hyprlock.nix
     ./jj.nix
+    ./mako.nix
     ./ssh.nix
     ./starship.nix
     ./udiskie.nix
