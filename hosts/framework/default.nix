@@ -34,6 +34,9 @@
   home-manager.users.pete.wayland.windowManager.hyprland.extraConfig = /* lua */ ''
     -- Home setup
     hl.monitor({ output = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. AORUS AD27QD 19270B000840", mode = "preferred", position = "auto-left", scale = 1})
+
+    -- Office setup
+    hl.monitor({ output = "desc:Dell Inc. DELL S2722QC 9KN3MD3", mode = "preferred", position = "auto-left", scale = "auto"})
   '';
 
   # Applications
