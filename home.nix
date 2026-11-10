@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  pkgs-unstable,
+  ...
+}:
 {
   home.username = "pete";
   home.homeDirectory = "/home/pete";
@@ -11,7 +16,7 @@
     pkgs.brightnessctl
     pkgs.playerctl
 
-    pkgs.ghidra
+    pkgs-unstable.ghidra
   ];
 
   # Reactivation of hyprlauncher on rebuild
