@@ -1,8 +1,13 @@
-{ pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
+  # inotifywait, used by the /pair skill's watcher
+  home.packages = [ pkgs.inotify-tools ];
+
   programs.claude-code = {
     enable = true;
     package = pkgs-unstable.claude-code;
+
+    skills.pair = ./claude/skills/pair;
 
     settings = {
       env.DISABLE_AUTOUPDATER = "1";
