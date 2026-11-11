@@ -7,6 +7,7 @@
     ./git.nix
     ./helix.nix
     ./hyprland.nix
+    ./hyprlauncher.nix
     ./hyprlock.nix
     ./jj.nix
     ./mako.nix
