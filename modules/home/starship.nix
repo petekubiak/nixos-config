@@ -56,6 +56,17 @@
         symbol = "";
       };
 
+      package = {
+        symbol = "";
+        version_format = "v$raw";
+      };
+
+      nodejs = {
+        format = " [$symbol](#339933)[$version](italic dimmed yellow)";
+        symbol = "";
+        version_format = "v$raw";
+      };
+
       format = lib.concatStrings [
         "($nix_shell$container$fill$jj_metrics\n)"
         "$cmd_duration"
