@@ -6,7 +6,7 @@
 # Events are debounced: nothing is printed until QUIET seconds pass with no saves.
 set -u
 cd "${1:-.}" || exit 1
-QUIET=${PAIR_QUIET:-20}
+QUIET=${PAIR_QUIET:-60}
 
 rev() {
   jj log -r @ --ignore-working-copy --no-graph \
