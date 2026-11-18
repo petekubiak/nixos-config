@@ -4,7 +4,10 @@
     ./hardware-configuration.nix
   ];
 
-  home-manager.users.pete.imports = [ ../../modules/home/claude.nix ];
+  home-manager.users.pete.imports = [
+    ../../modules/home/claude.nix
+    ../../modules/home/gh.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -21,6 +24,9 @@
   services = {
     power-profiles-daemon.enable = true;
     fwupd.enable = true;
+
+    # Secret Service provider (used by gh to store its token)
+    gnome.gnome-keyring.enable = true;
   };
 
   # Fingerprint scanner
