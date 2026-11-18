@@ -27,13 +27,12 @@ inotifywait -m -r -q -e close_write,moved_to,delete \
       git check-ignore -q "$path" 2>/dev/null || pending+=("${path#./}")
     else
       (( $? > 128 )) || exit 0          # EOF: inotifywait has exited
-      (( ${#pending[@]} )) || continue  # quiet, nothing pending
       cur=$(rev) || continue
       change=${cur%% *}
       if [[ $change != "$last_change" ]]; then
         echo "switched: $cur"
         last_change=$change
-      else
+      elif (( ${#pending[@]} )); then
         echo "changed: $(printf '%s\n' "${pending[@]}" | sort -u | paste -sd' ')"
       fi
       pending=()
