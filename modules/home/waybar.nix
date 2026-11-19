@@ -1,10 +1,18 @@
-{ lib, pkgs, ... }: {
+{
+  lib,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
+{
   home.packages = [
     pkgs.bluetui
   ];
 
   programs.waybar = {
+    package = pkgs-unstable.waybar;
     enable = true;
+
     systemd.enable = true;
     settings = {
       mainBar = {
