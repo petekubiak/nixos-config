@@ -177,7 +177,7 @@
       window#waybar > box {
         background-color: alpha(@base00, 0.9);
         color: @base04;
-        border-radius: 7rem;
+        border-radius: 16px;
         border: 2px solid @base04;
       }
 
@@ -189,9 +189,13 @@
 
       #workspaces button {
         color: @base04;
-        border-radius: 7rem;
+        border-radius: 6px;
         min-height: 0;
         padding: 0 6px;
+      }
+
+      #workspaces button:first-child {
+        border-radius: 16px 6px 6px 16px;
       }
 
       #workspaces button.active {
@@ -207,6 +211,7 @@
       #pulseaudio,
       #cpu,
       #memory,
+      #disk,
       #temperature,
       #backlight,
       #battery,
@@ -219,13 +224,14 @@
       }
 
       #clock {
-        border-radius: 6px 7rem 7rem 6px;
+        border-radius: 6px 16px 16px 6px;
       }
 
       #idle_inhibitor:hover,
       #pulseaudio:hover,
       #cpu:hover,
       #memory:hover,
+      #disk:hover,
       #temperature:hover,
       #backlight:hover,
       #battery:hover,
