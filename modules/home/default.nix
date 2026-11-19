@@ -13,6 +13,7 @@
     ./mako.nix
     ./ssh.nix
     ./starship.nix
+    ./tio.nix
     ./udiskie.nix
     ./waybar.nix
     ./yazi.nix
