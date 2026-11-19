@@ -1,7 +1,7 @@
 {
   pkgs,
   lib,
-  pkgs-unstable,
+  pkgs-ghidra,
   ...
 }:
 {
@@ -16,7 +16,7 @@
     pkgs.brightnessctl
     pkgs.playerctl
 
-    pkgs-unstable.ghidra
+    pkgs-ghidra.ghidra
   ];
 
   # Reactivation of hyprlauncher on rebuild
